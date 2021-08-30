@@ -1,0 +1,167 @@
+@use 'abstracts' as *;
+@use 'components' as *;
+
+header{ 
+    padding: 2.5rem 1.5rem;
+    @include flex(center , space-between );
+
+    .main__header__logo , .menu{ 
+        position: relative;
+        z-index: 999;
+    }
+
+    div:not(.container){ 
+        width: 100%;
+        @include flex(center , space-between);
+    }
+}
+
+main{ 
+    margin-block-start: 3rem;
+}
+
+.hero{ 
+    margin-block-end: 8rem;
+
+    &__content__links{ 
+      @include flex(center , center , 1rem );
+      flex-wrap: wrap;
+    }
+
+    .container{ 
+        @media(min-width:900px) {
+            @include flex(center , center , 1rem);
+
+            margin-top: 8rem;
+            .hero__content{ 
+                text-align: left;
+                order: -1;
+            }
+
+
+
+            .image--hero img{ 
+                width: 50rem;
+            }
+
+            .hero__content__links{ 
+                @include flex(center , flex-start , 1rem );
+            }
+        }
+    }
+}
+
+.features{ 
+    margin-block-end: 8rem;
+}
+
+.stay-updated{ 
+    padding: 5rem 2rem;
+    margin-block-start: 6rem;
+    background-color: var(--blue);
+    color: white;
+
+    @media(min-width:800px) {
+        @include flex(center , center , 0, column);
+    }
+
+    p{ 
+        letter-spacing: 4px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    h2{ 
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+        font-size: 1.25rem;
+
+        @media(min-width:800px) {
+            font-size: 2.5rem;
+            max-width: 20ch;
+            margin-bottom: 1rem;
+        }
+    }
+
+    form{ 
+        margin-top: 2rem;
+        @include flex( initial ,initial ,1rem , column);
+
+        label{ 
+            text-align: left;
+        }
+
+        input{ 
+            border: none;
+            font-family: inherit;
+            margin-top: .6em;
+            padding: 1rem;
+            border-radius: var(--radius);
+            font-size: 1rem;
+
+            &:focus{ 
+                outline: var(--outline);
+                outline-color: white;
+                outline-offset: 5px;
+            }
+        }
+
+        @media(min-width:800px) {
+            @include flex(flex-end, center , 0.5rem);
+            width: 40%;
+            label{ 
+                flex: 2;
+            }
+        }
+    }
+}
+
+footer{ 
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 3rem 0;
+
+    .logo{ 
+        display: inline-block;
+        margin-bottom: 2rem;
+    }
+
+    ul li a{ 
+        display: inline-block;
+        font-weight: lighter;
+        color: var(--light-grayish-blue);
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .logo svg g path{ 
+        fill: white;    
+    }
+
+    nav{ 
+        margin-bottom: 1.5rem;
+    }
+
+    .social__links a{ 
+        margin-inline: 1rem;
+    }
+    
+    .social__links a:hover path{ 
+        fill: var(--red);
+    }
+
+    @media(min-width:800px) {
+        @include flex(center , space-between);
+        padding-inline: 6rem;
+
+        .logo, nav , ul li a{ 
+            margin: 0;
+        }
+
+        nav{ 
+            @include flex(center , initial);
+            gap: 1rem;
+        }
+    }
+}
