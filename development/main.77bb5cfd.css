@@ -636,7 +636,7 @@ footer ul li a {
 footer .logo svg g path {
   fill: white;
 }
-footer nav {
+footer #footer-nav {
   margin-bottom: 1.5rem;
 }
 footer .social__links a {
@@ -654,10 +654,10 @@ footer .social__links a:hover path {
     flex-direction: row;
     padding-inline: 6rem;
   }
-  footer .logo, footer nav, footer ul li a {
+  footer .logo, footer #footer-nav, footer ul li a {
     margin: 0;
   }
-  footer nav {
+  footer #footer-nav {
     display: flex;
     justify-content: initial;
     align-items: center;

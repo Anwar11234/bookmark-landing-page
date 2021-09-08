@@ -139,7 +139,7 @@ footer{
         fill: white;    
     }
 
-    nav{ 
+    #footer-nav{ 
         margin-bottom: 1.5rem;
     }
 
@@ -155,11 +155,11 @@ footer{
         @include flex(center , space-between);
         padding-inline: 6rem;
 
-        .logo, nav , ul li a{ 
+        .logo, #footer-nav , ul li a{ 
             margin: 0;
         }
 
-        nav{ 
+        #footer-nav{ 
             @include flex(center , initial);
             gap: 1rem;
         }
