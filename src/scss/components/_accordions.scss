@@ -1,0 +1,75 @@
+@use 'abstracts' as *;
+
+.faqs { 
+    margin-top: 8rem;
+    @media(min-width:1200px) {
+        margin-top: 13rem;
+    }
+
+    .btn{ 
+        margin-top: 2rem;
+    }
+
+    .questions{ 
+        margin-top: 4rem;
+
+        @media(min-width:800px) {
+            max-width: 60%;
+            margin: 4rem auto;
+        }
+    }
+}
+
+.faq { 
+    padding-block:1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-grayish-blue);
+
+    &:first-child{ 
+        border-top: 1px solid var(--light-grayish-blue);
+    }
+
+    h2{ 
+        font-weight: lighter;
+        font-size: 0.9rem;
+        @media(max-width:350px) {
+            text-align: left;
+            font-size: 0.75rem;
+        }
+        
+        button{ 
+            color: var(--dark-blue);
+            width: 100%;
+            @include flex(center , space-between);
+
+            &:hover{ 
+                color: var(--red);
+            }
+
+            &:focus{ 
+                outline: none;
+            }
+
+            &:focus svg{ 
+                outline: var(--outline);
+                outline-offset: var(--outline-offset);
+            }
+
+            &[aria-expanded = "true"] svg{ 
+
+                transform: rotate(180deg);
+                path{ 
+                    stroke: var(--red);
+                }
+            }
+        }
+    }
+
+    div p{ 
+        text-align: left;
+        margin: 2rem 0;
+        line-height: 1.7;
+        color: var(--grayish-blue);
+        font-size: 0.9rem;
+    }
+}
